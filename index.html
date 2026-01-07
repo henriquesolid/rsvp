@@ -1,1 +1,88 @@
-  index.html
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aniversário do Ricardo 🎉</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="container">
+    <p class="badge">Convite</p>
+    <h1>Aniversário do Ricardo 🎂</h1>
+    <p class="subtitle">Vamos comemorar juntos!</p>
+  </header>
+
+  <main class="container">
+    <!-- DESCRIÇÃO DO EVENTO -->
+    <section class="card">
+      <h2>Detalhes do evento</h2>
+
+      <div class="grid-2">
+        <div>
+          <p><strong>📅 Data:</strong> 14 de janeiro de 2026</p>
+          <p><strong>🕒 Horário:</strong> 19:30</p>
+          <p><strong>📍 Local:</strong> Minha casa — Kildare Town</p>
+        </div>
+
+        <div>
+          <p><strong>👕 Dress code:</strong> Casual</p>
+          <p><strong>🍕 Comida e bebida:</strong> Vamos ter snacks e bebidas</p>
+          <p><strong>✅ RSVP:</strong> Me avisa até <strong>10/01</strong> 😊</p>
+        </div>
+      </div>
+
+      <p class="text">
+        <strong>Descrição:</strong> Aqui vai um textinho sobre o evento (ex.: “vai ter música, conversa, comida e
+        uma comemoração tranquila”). Troca este parágrafo pelo que você quiser.
+      </p>
+    </section>
+
+    <!-- 3 FOTOS NO MEIO -->
+    <section class="card">
+      <h2>Fotos</h2>
+      <div class="gallery">
+        <figure>
+          <img src="img/foto1.jpg" alt="Foto 1 do aniversário" loading="lazy">
+        </figure>
+        <figure>
+          <img src="img/foto2.jpg" alt="Foto 2 do aniversário" loading="lazy">
+        </figure>
+        <figure>
+          <img src="img/foto3.jpg" alt="Foto 3 do aniversário" loading="lazy">
+        </figure>
+      </div>
+      <p class="hint">Dica: coloque 3 fotos em <code>img/</code> com os nomes acima.</p>
+    </section>
+
+    <!-- QR CODES -->
+    <section class="card">
+      <h2>Presentes (opcional)</h2>
+      <p class="text">
+        Se você quiser contribuir com um presente, pode usar um dos QR codes abaixo. Obrigado! 💛
+      </p>
+
+      <div class="qr-grid">
+        <div class="qr-card">
+          <h3>Revolut</h3>
+          <img class="qr" src="qr/revolut.png" alt="QR code do Revolut" loading="lazy">
+          <p class="small">Escaneie com o app Revolut</p>
+        </div>
+
+        <div class="qr-card">
+          <h3>Bitcoin</h3>
+          <img class="qr" src="qr/bitcoin.png" alt="QR code do Bitcoin" loading="lazy">
+          <p class="small">Escaneie com sua carteira</p>
+        </div>
+      </div>
+
+      <p class="hint">Dica: gere 2 PNGs e coloque em <code>qr/</code> com os nomes acima.</p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Te espero! 🎉</p>
+  </footer>
+</body>
+</html>
