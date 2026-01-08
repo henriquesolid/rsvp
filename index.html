@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ricardo’s Birthday 🎉</title>
+  <meta name="description" content="Ricardo’s Birthday — event details, photos, and optional gift links." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -30,23 +31,21 @@
 
       <div class="grid-2">
         <div>
-          <p><strong data-i18n="dateLabel">📅 Date:</strong> <span data-i18n="dateValue">14 January 2026</span></p>
+          <p><strong data-i18n="dateLabel">📅 Date:</strong> <span data-i18n="dateValue">17 January 2026</span></p>
           <p><strong data-i18n="timeLabel">🕒 Time:</strong> <span data-i18n="timeValue">19:30</span></p>
-          <p><strong data-i18n="placeLabel">📍 Location:</strong> <span data-i18n="placeValue">My place — Kildare Town</span></p>
+          <p><strong data-i18n="placeLabel">📍 Location:</strong> <span data-i18n="placeValue"></span></p>
         </div>
 
         <div>
           <p><strong data-i18n="dressLabel">👕 Dress code:</strong> <span data-i18n="dressValue">Casual</span></p>
-          <p><strong data-i18n="foodLabel">🍕 Food & drinks:</strong> <span data-i18n="foodValue">Snacks and drinks provided</span></p>
+          <p><strong data-i18n="foodLabel">🍕 Food & drinks:</strong> <span data-i18n="foodValue"></span></p>
           <p><strong data-i18n="rsvpLabel">✅ RSVP:</strong> <span data-i18n="rsvpValue">Let me know by <strong>10/01</strong> 😊</span></p>
         </div>
       </div>
 
       <p class="text">
         <strong data-i18n="descLabel">Description:</strong>
-        <span data-i18n="descText">
-          Add a short description here (music, chats, food, a relaxed celebration). Replace this text with whatever you want.
-        </span>
+        <span data-i18n="descText"></span>
       </p>
     </section>
 
@@ -55,40 +54,39 @@
       <h2 data-i18n="photosHeading">Photos</h2>
       <div class="gallery">
         <figure>
-          <img src="img/foto1.jpg" alt="Photo 1" loading="lazy">
+          <img src="img/foto1.jpeg" alt="Ricardo - photo 1" loading="lazy">
         </figure>
         <figure>
-          <img src="img/foto2.jpg" alt="Photo 2" loading="lazy">
+          <img src="img/foto2.jpeg" alt="Ricardo - photo 2" loading="lazy">
         </figure>
         <figure>
-          <img src="img/foto3.jpg" alt="Photo 3" loading="lazy">
+          <img src="img/foto3.jpg" alt="Ricardo - photo 3" loading="lazy">
         </figure>
       </div>
-      <p class="hint" data-i18n="photosHint">Tip: put 3 photos in <code>img/</code> with the names above.</p>
+      <p class="hint" data-i18n="photosHint">Time to celebrate.</p>
     </section>
 
     <!-- QR CODES -->
     <section class="card">
-      <h2 data-i18n="giftsHeading">Gifts (optional)</h2>
-      <p class="text" data-i18n="giftsText">
-        If you’d like to contribute to a gift, you can use one of the QR codes below. Thank you! 💛
-      </p>
+      <h2 data-i18n="giftsHeading">Gifts</h2>
+      <p class="text" data-i18n="giftsText"></p>
 
       <div class="qr-grid">
         <div class="qr-card">
           <h3>Revolut</h3>
-          <img class="qr" src="qr/revolut.png" alt="Revolut QR code" loading="lazy">
-          <p class="small" data-i18n="revolutHint">Scan with the Revolut app</p>
+          <!-- RECOMENDADO: usar nomes em minúsculo no servidor -->
+          <img class="qr" src="qr/revolut.jpeg" alt="Revolut QR code" loading="lazy">
+          <p class="small" data-i18n="revolutHint"></p>
         </div>
 
         <div class="qr-card">
           <h3>Bitcoin</h3>
-          <img class="qr" src="qr/bitcoin.png" alt="Bitcoin QR code" loading="lazy">
-          <p class="small" data-i18n="btcHint">Scan with your wallet</p>
+          <img class="qr" src="qr/bitcoin.jpeg" alt="Bitcoin QR code" loading="lazy">
+          <p class="small" data-i18n="btcHint"></p>
         </div>
       </div>
 
-      <p class="hint" data-i18n="qrHint">Tip: generate 2 PNGs and put them in <code>qr/</code> with the names above.</p>
+      <p class="hint" data-i18n="qrHint"></p>
     </section>
   </main>
 
@@ -97,64 +95,74 @@
   </footer>
 
   <script>
-    // Language packs
     const I18N = {
       "en-IE": {
         badge: "Invitation",
         langButton: "Português (BR)",
         title: "Ricardo’s Birthday 🎂",
         subtitle: "Let’s celebrate together!",
+
         detailsHeading: "Event details",
         dateLabel: "📅 Date:",
-        dateValue: "14 January 2026",
+        dateValue: "17 January 2026",
         timeLabel: "🕒 Time:",
         timeValue: "19:30",
         placeLabel: "📍 Location:",
-        placeValue: "My place — Kildare Town",
+        placeValue: 'Kalabase — Karaoke (<a href="https://maps.app.goo.gl/VEoURHQ5YNMqFppe7" target="_blank" rel="noopener">Google Maps</a>)',
+
         dressLabel: "👕 Dress code:",
         dressValue: "Casual",
         foodLabel: "🍕 Food & drinks:",
-        foodValue: "Snacks and drinks provided",
+        foodValue: 'Snacks and drinks (<a href="https://drive.google.com/file/d/1xbIwStQix7-cQG_ZFFER-6jGUQ-YNUA1/view" target="_blank" rel="noopener">details</a>)',
         rsvpLabel: "✅ RSVP:",
         rsvpValue: "Let me know by <strong>10/01</strong> 😊",
+
         descLabel: "Description:",
-        descText: "Add a short description here (music, chats, food, a relaxed celebration). Replace this text with whatever you want.",
+        descText: "Music, chats, food, a relaxed celebration. Show me your karaoke skills.",
+
         photosHeading: "Photos",
         photosHint: "Tip: put 3 photos in <code>img/</code> with the names above.",
-        giftsHeading: "Gifts (optional)",
-        giftsText: "If you’d like to contribute to a gift, you can use one of the QR codes below. Thank you! 💛",
-        revolutHint: "Scan with the Revolut app",
-        btcHint: "Scan with your wallet",
-        qrHint: "Tip: generate 2 PNGs and put them in <code>qr/</code> with the names above.",
+
+        giftsHeading: "Gifts",
+        giftsText: "If you’d like to contribute to a gift, you can use one of the options below. Thank you! 💛",
+        revolutHint: 'Scan with the Revolut app.<br><a href="https://revolut.me/rricardosilva" target="_blank" rel="noopener">revolut.me/rricardosilva</a>',
+        btcHint: "Scan with your wallet.",
+        qrHint: 'You can also buy using my Amazon Wishlist.<br><a href="https://www.amazon.ie/hz/wishlist/ls/1IKBLHHTMYEOG?ref_=wl_share" target="_blank" rel="noopener">Open wishlist</a>.',
         footer: "See you there! 🎉"
       },
+
       "pt-BR": {
         badge: "Convite",
         langButton: "English (Ireland)",
         title: "Aniversário do Ricardo 🎂",
         subtitle: "Vamos comemorar juntos!",
+
         detailsHeading: "Detalhes do evento",
         dateLabel: "📅 Data:",
-        dateValue: "14 de janeiro de 2026",
+        dateValue: "17 de janeiro de 2026",
         timeLabel: "🕒 Horário:",
         timeValue: "19:30",
         placeLabel: "📍 Local:",
-        placeValue: "Minha casa — Kildare Town",
+        placeValue: 'Kalabase — Karaokê (<a href="https://maps.app.goo.gl/VEoURHQ5YNMqFppe7" target="_blank" rel="noopener">Google Maps</a>)',
+
         dressLabel: "👕 Dress code:",
         dressValue: "Casual",
         foodLabel: "🍕 Comida e bebida:",
-        foodValue: "Vamos ter snacks e bebidas",
+        foodValue: 'Snacks e bebidas (<a href="https://drive.google.com/file/d/1xbIwStQix7-cQG_ZFFER-6jGUQ-YNUA1/view" target="_blank" rel="noopener">detalhes</a>)',
         rsvpLabel: "✅ RSVP:",
         rsvpValue: "Me avisa até <strong>10/01</strong> 😊",
+
         descLabel: "Descrição:",
-        descText: "Escreva aqui uma descrição curta (música, conversa, comida, comemoração tranquila). Troque este texto pelo que você quiser.",
+        descText: "Música, conversa, comida e comemoração tranquila. Quero ver suas habilidades no karaokê.",
+
         photosHeading: "Fotos",
         photosHint: "Dica: coloque 3 fotos em <code>img/</code> com os nomes acima.",
-        giftsHeading: "Presentes (opcional)",
-        giftsText: "Se você quiser contribuir com um presente, pode usar um dos QR codes abaixo. Obrigado! 💛",
-        revolutHint: "Escaneie com o app Revolut",
-        btcHint: "Escaneie com sua carteira",
-        qrHint: "Dica: gere 2 PNGs e coloque em <code>qr/</code> com os nomes acima.",
+
+        giftsHeading: "Presentes",
+        giftsText: "Se você quiser contribuir com um presente, pode usar uma das opções abaixo. Obrigado! 💛",
+        revolutHint: 'Escaneie com o app Revolut.<br><a href="https://revolut.me/rricardosilva" target="_blank" rel="noopener">revolut.me/rricardosilva</a>',
+        btcHint: "Escaneie com sua carteira.",
+        qrHint: 'Você também pode comprar pela minha lista da Amazon.<br><a href="https://www.amazon.ie/hz/wishlist/ls/1IKBLHHTMYEOG?ref_=wl_share" target="_blank" rel="noopener">Abrir lista</a>.',
         footer: "Te espero! 🎉"
       }
     };
@@ -179,10 +187,7 @@
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         if (!(key in dict)) return;
-
-        // Allow HTML for specific keys like rsvpValue (has <strong>)
-        const value = dict[key];
-        el.innerHTML = value;
+        el.innerHTML = dict[key];
       });
 
       localStorage.setItem(STORAGE_KEY, lang);
@@ -190,11 +195,9 @@
 
     function toggleLang() {
       const current = localStorage.getItem(STORAGE_KEY) || "en-IE";
-      const next = current === "en-IE" ? "pt-BR" : "en-IE";
-      applyLang(next);
+      applyLang(current === "en-IE" ? "pt-BR" : "en-IE");
     }
 
-    // Init
     applyLang(detectDefaultLang());
     document.getElementById("langToggle").addEventListener("click", toggleLang);
   </script>

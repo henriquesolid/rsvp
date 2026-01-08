@@ -31,15 +31,14 @@ header{
   text-align: center;
 }
 
-/* Top bar: mantém layout “badge à esquerda / botão à direita”
-   mesmo com header centralizado */
+/* top row (badge + language button) */
 .topbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 14px;
-  text-align: left; /* importante: neutraliza o center do header */
+  text-align: left; /* neutraliza o text-align do header */
 }
 
 @media (max-width: 520px){
@@ -57,27 +56,9 @@ header{
   background: rgba(255,255,255,.04);
   padding: 6px 12px;
   border-radius: 999px;
-  margin: 0; /* topbar já tem margin-bottom */
+  margin: 0;
   color: var(--muted);
   font-size: 14px;
-}
-
-.lang-btn{
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  color: rgba(232,238,252,.85);
-  padding: 8px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.lang-btn:hover{
-  background: rgba(255,255,255,.08);
-}
-
-.lang-btn:focus-visible{
-  outline: 2px solid rgba(232,238,252,.45);
-  outline-offset: 2px;
 }
 
 h1{
@@ -113,9 +94,27 @@ h2{
 .text{
   margin: 12px 0 0;
   color: var(--muted);
-  max-width: 72ch; /* leitura mais confortável */
+  max-width: 72ch;
 }
 
+/* Links */
+a{
+  color: rgba(232,238,252,.92);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover{
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible{
+  outline: 2px solid rgba(232,238,252,.45);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Details grid */
 .grid-2{
   display: grid;
   gap: 12px;
@@ -125,7 +124,7 @@ h2{
   .grid-2{ grid-template-columns: 1fr 1fr; }
 }
 
-/* Fotos */
+/* Photos */
 .gallery{
   display: grid;
   gap: 10px;
@@ -146,7 +145,7 @@ h2{
 .gallery img{
   display: block;
   width: 100%;
-  height: clamp(180px, 28vw, 220px); /* mais responsivo */
+  height: clamp(180px, 28vw, 220px);
   object-fit: cover;
 }
 
@@ -163,7 +162,7 @@ code{
   border-radius: 8px;
 }
 
-/* QR codes */
+/* QR area */
 .qr-grid{
   display: grid;
   gap: 12px;
@@ -197,6 +196,25 @@ code{
   margin: 10px 0 0;
   color: rgba(232,238,252,.65);
   font-size: 13px;
+}
+
+/* Language button */
+.lang-btn{
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(232,238,252,.85);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lang-btn:hover{
+  background: rgba(255,255,255,.08);
+}
+
+.lang-btn:focus-visible{
+  outline: 2px solid rgba(232,238,252,.45);
+  outline-offset: 2px;
 }
 
 .footer{
