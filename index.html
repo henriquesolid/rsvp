@@ -39,7 +39,7 @@
         <div>
           <p><strong data-i18n="dressLabel">👕 Dress code:</strong> <span data-i18n="dressValue">Casual</span></p>
           <p><strong data-i18n="foodLabel">🍕 Food & drinks:</strong> <span data-i18n="foodValue"></span></p>
-          <p><strong data-i18n="rsvpLabel">✅ RSVP:</strong> <span data-i18n="rsvpValue">Let me know <strong>ASAP</strong> 😊</span></p>
+          <p><strong data-i18n="rsvpLabel">✅ RSVP:</strong> <span data-i18n="rsvpValue"></span></p>
         </div>
       </div>
 
@@ -86,6 +86,41 @@
         </div>
       </div>
 
+            <div class="amazon-card" data-lang="en-IE" hidden>
+        <p class="amazon-title">🎁 Gifts (optional)</p>
+        <p class="amazon-text">
+            You can also buy something from my<br>
+            <strong>very humble (and totally reasonable)</strong> Amazon wishlist 😇
+        </p>
+
+        <a
+            class="amazon-button"
+            href="https://www.amazon.ie/hz/wishlist/ls/1IKBLHHTMYEOG?ref_=wl_share"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Open Amazon wishlist
+        </a>
+        </div>
+
+        <div class="amazon-card" data-lang="pt-BR" hidden>
+        <p class="amazon-title">🎁 Presentes (opcional)</p>
+        <p class="amazon-text">
+            Você também pode escolher algo da minha<br>
+            <strong>humilde (e totalmente razoável)</strong> lista da Amazon 😇
+        </p>
+
+        <a
+            class="amazon-button"
+            href="https://www.amazon.ie/hz/wishlist/ls/1IKBLHHTMYEOG?ref_=wl_share"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Ver lista da Amazon
+        </a>
+        </div>
+
+
       <p class="hint" data-i18n="qrHint"></p>
     </section>
   </main>
@@ -125,10 +160,10 @@
         photosHint: "Just me enjoying life!",
 
         giftsHeading: "Gifts",
-        giftsText: "If you’d like to give me a gift, you can use one of the options below. Thank you! 💛",
-        revolutHint: 'Scan with the Revolut app.<br><a href="https://revolut.me/rricardosilva" target="_blank" rel="noopener">revolut.me/rricardosilva</a>',
-        btcHint: "Scan with your wallet.",
-        qrHint: 'You can also buy something from my very humble (and totally reasonable) Amazon wishlist.<br><a href="https://www.amazon.ie/hz/wishlist/ls/1IKBLHHTMYEOG?ref_=wl_share" target="_blank" rel="noopener">Open wishlist</a>.',
+        giftsText: "If you’d like to give me a gift, you can use one of the options below. Thank you! 💚",
+        revolutHint: 'Scan with the Revolut app, or click the link.<br><a href="https://revolut.me/rricardosilva" target="_blank" rel="noopener noreferrer">revolut.me/rricardosilva</a>',
+        btcHint: "Scan with your wallet, or send via Bitcoin: bc1qlhk5hp6qqw5r99pu0rdmy32dw78vyuknpqn6yn.",
+        qrHint: 'Thank you for celebrating with me 💚',
         footer: "See you there! 🎉"
       },
 
@@ -160,10 +195,10 @@
         photosHint: "Eu curtindo a vida!",
 
         giftsHeading: "Presentes",
-        giftsText: "Se você quiser me presentear, pode usar uma das opções abaixo. Obrigado! 💛",
-        revolutHint: 'Escaneie com o app Revolut.<br><a href="https://revolut.me/rricardosilva" target="_blank" rel="noopener">revolut.me/rricardosilva</a>',
-        btcHint: "Escaneie com sua carteira.",
-        qrHint: 'Você também pode comprar algo da minha humilde (e totalmente razoável) lista da Amazon.<br><a href="https://www.amazon.ie/hz/wishlist/ls/1IKBLHHTMYEOG?ref_=wl_share" target="_blank" rel="noopener">Abrir lista</a>.',
+        giftsText: "Se você quiser me presentear, pode usar uma das opções abaixo. Obrigado! 💚",
+        revolutHint: 'Escaneie com o app Revolut.<br><a href="https://revolut.me/rricardosilva" target="_blank" rel="noopener noreferrer">revolut.me/rricardosilva</a>',
+        btcHint: "Escaneie com sua carteira ou envie via Bitcoin: bc1qlhk5hp6qqw5r99pu0rdmy32dw78vyuknpqn6yn",
+        qrHint: 'Obrigado por comemorar comigo 💚',
         footer: "Te espero! 🎉"
       }
     };
@@ -182,17 +217,23 @@
     }
 
     function applyLang(lang) {
-      const dict = I18N[lang] || I18N["en-IE"];
-      document.documentElement.lang = lang;
+  const dict = I18N[lang] || I18N["en-IE"];
+  document.documentElement.lang = lang;
 
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (!(key in dict)) return;
-        el.innerHTML = dict[key];
-      });
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (!(key in dict)) return;
+    el.innerHTML = dict[key];
+  });
 
-      localStorage.setItem(STORAGE_KEY, lang);
-    }
+  // Show only the amazon card for the current language
+  document.querySelectorAll(".amazon-card[data-lang]").forEach(card => {
+    card.hidden = card.getAttribute("data-lang") !== lang;
+  });
+
+  localStorage.setItem(STORAGE_KEY, lang);
+}
+
 
     function toggleLang() {
       const current = localStorage.getItem(STORAGE_KEY) || "en-IE";
